@@ -1,0 +1,68 @@
+{
+  "featuredProducts": [
+    {
+      "id": 1,
+      "title": "Demon Swan",
+      "description": "Handgjord konst, perfekt att ha på väggen i ditt hem!",
+      "longDescription": "En mystisk och vacker handgjord konst som kombinerar det övernaturliga med naturens skönhet. Demon Swan är skapad med omsorg och uppmärksamhet på detaljer, där varje penseldrag berättar en historia. Perfekt som ett statement-piece i ditt hem eller kontor.",
+      "image": "/src/assets/images/DemonSwan.png",
+      "price": "299 kr",
+      "category": "konst",
+      "inStock": true,
+      "features": [
+        "Handgjord med hög kvalitet",
+        "Unik design",
+        "Perfekt för väggdekoration",
+        "Signerad av konstnären"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Fungi Face",
+      "description": "Handgjord konst, perfekt att ha på väggen i ditt hem!",
+      "longDescription": "En fascinerande blandning av svampens mystik och mänskligt ansikte. Fungi Face är en unik konst som utforskar gränsen mellan naturen och det mänskliga. Varje detalj är noggrant utformad för att skapa en hypnotiserande visuell upplevelse.",
+      "image": "/src/assets/images/FungiFace.png",
+      "price": "199 kr",
+      "category": "konst",
+      "inStock": true,
+      "features": [
+        "Original konstverk",
+        "Dramatisk och mystisk design",
+        "Perfekt för konstsamling",
+        "Unik konversationsstartare"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pendants",
+      "description": "handgjorda smycken, fina och mystiska, perfekt att ha på dig!",
+      "longDescription": "Eleganta och mystiska halsband som bär med sig naturens magi. Varje pendant är handgjord med omsorg och innehåller unika detaljer som gör dem till små konstverk att bära. Perfekta för den som vill uttrycka sin koppling till naturen och det mystiska.",
+      "image": "/src/assets/images/Pendants.png",
+      "price": "149 kr",
+      "category": "smycken",
+      "inStock": true,
+      "features": [
+        "Handgjorda av hållbart material",
+        "Unik design för varje stycke",
+        "Perfekta som gåva",
+        "Lång hållbarhet"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Handväska",
+      "description": "handgjord väska, perfekt att ha dina nya fungi smycken i!",
+      "longDescription": "En praktisk och stilren handväska som kombinerar funktionalitet med unik design. Perfekt storlek för att bära dina viktigaste saker, inklusive dina nya Fungi-smycken. Varje väska är handgjord med omsorg om detaljer och kvalitet.",
+      "image": "/src/assets/images/Väska.png",
+      "price": "500 kr",
+      "category": "smycken",
+      "inStock": true,
+      "features": [
+        "Handgjord av hållbart material",
+        "Rymlig och praktisk",
+        "Unik design",
+        "Perfekt matchning till Fungi-smycken"
+      ]
+    }
+  ]
+} 

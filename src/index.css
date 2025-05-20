@@ -1,0 +1,30 @@
+
+body {
+    font-family: 'Lora', serif;
+    color: #222;
+    background: #faf9f6;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'UnifrakturCook', cursive;
+    letter-spacing: 1px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .main-logo {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 350px;
+    height: auto;
+  }

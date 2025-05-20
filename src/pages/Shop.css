@@ -1,0 +1,14 @@
+.shop {
+  padding: 2rem;
+}
+
+.shop-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.shop-content {
+  max-width: 1200px;
+  margin: 0 auto;
+} 
