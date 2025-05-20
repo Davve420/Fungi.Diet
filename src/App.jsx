@@ -1,15 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar'
+import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
+import Shop from './pages/Shop'
+import ProductDetail from './pages/ProductDetail'
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="about" element={<About />} />
+          <Route path="product/:id" element={<ProductDetail />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

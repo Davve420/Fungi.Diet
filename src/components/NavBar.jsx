@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
+import './NavBar.css'
 
-function NavBar() {
+const NavBar = () => {
   return (
-    <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-      <Link to="/" style={{ marginRight: '1rem' }}>Hem</Link>
-      <Link to="/about">Om</Link>
+    <nav className="navbar">
+      <div className="nav-content">
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/shop" className="nav-link">Shop</Link>
+        <Link to="/about" className="nav-link">About</Link>
+      </div>
     </nav>
   )
 }
