@@ -1,0 +1,41 @@
+.shop-header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.shop-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.category-link:hover {
+  color: #666;
+}
+
+.category-star {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+} 

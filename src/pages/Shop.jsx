@@ -1,11 +1,12 @@
+import ShopHeader from '../components/ui/ShopHeader'
 import './Shop.css'
 
 const Shop = () => {
   return (
-    <div className="shop">
-      <h1 className="shop-title">Shop</h1>
-      <div className="shop-content">
-        <p>Shop content kommer här...</p>
+    <div className="shop-page">
+      <ShopHeader />
+      <div className="products-container">
+        {/* Här kommer produkterna att visas */}
       </div>
     </div>
   )

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-function Home() {
-    return (
-      <div>
-        <h1>Välkommen hem!</h1>
-        <p>Detta är hemsidan.</p>
-      </div>
-    )
-  }
-  
-  export default Home
-=======
 import './Home.css'
 import ProductCard from '../components/ui/ProductCard'
 import productsData from '../data/products.json'
@@ -37,5 +25,4 @@ const Home = () => {
 }
 
 export default Home
->>>>>>> 2c72bd45f66938018cd8c97bd0494b59e5979a3b
   
