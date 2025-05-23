@@ -1,6 +1,8 @@
 import './Home.css'
 import ProductCard from '../components/ui/ProductCard'
 import productsData from '../data/products.json'
+import monsterPNG from '../assets/images/monsterPNG.png'
+import { motion } from 'framer-motion'
 
 const Home = () => {
   const { featuredProducts } = productsData
@@ -8,15 +10,29 @@ const Home = () => {
   return (
     <div className="home">
       <section className="hero">
-        <img src="/src/assets/images/fungi-logo.png" alt="Fungi Diet logo" className="main-logo" />
-        <p className="subtitle">Upptäck naturens skatter</p>
+        <motion.img 
+          src={monsterPNG} 
+          alt="Fungi Diet monster" 
+          className="main-logo"
+          initial={{ opacity: 0, y: -60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        />
+        <motion.p 
+          className="subtitle"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+        >
+          Upptäck naturens skatter
+        </motion.p>
       </section>
 
       <section className="featured">
         <h2 className="section-title">Utvalda produkter</h2>
         <div className="items-grid">
-          {featuredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
+          {featuredProducts.slice(0, 3).map((product, i) => (
+            <ProductCard key={product.id} product={product} index={i} />
           ))}
         </div>
       </section>

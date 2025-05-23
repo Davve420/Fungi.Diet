@@ -1,0 +1,61 @@
+.app {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.header-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  background: none;
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rabbit-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.rabbit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}

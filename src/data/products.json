@@ -7,7 +7,7 @@
       "longDescription": "En mystisk och vacker handgjord konst som kombinerar det övernaturliga med naturens skönhet. Demon Swan är skapad med omsorg och uppmärksamhet på detaljer, där varje penseldrag berättar en historia. Perfekt som ett statement-piece i ditt hem eller kontor.",
       "image": "/src/assets/images/DemonSwan.png",
       "price": "299 kr",
-      "category": "konst",
+      "category": "home-decor",
       "inStock": true,
       "features": [
         "Handgjord med hög kvalitet",
@@ -23,7 +23,7 @@
       "longDescription": "En fascinerande blandning av svampens mystik och mänskligt ansikte. Fungi Face är en unik konst som utforskar gränsen mellan naturen och det mänskliga. Varje detalj är noggrant utformad för att skapa en hypnotiserande visuell upplevelse.",
       "image": "/src/assets/images/FungiFace.png",
       "price": "199 kr",
-      "category": "konst",
+      "category": "home-decor",
       "inStock": true,
       "features": [
         "Original konstverk",
@@ -39,7 +39,7 @@
       "longDescription": "Eleganta och mystiska halsband som bär med sig naturens magi. Varje pendant är handgjord med omsorg och innehåller unika detaljer som gör dem till små konstverk att bära. Perfekta för den som vill uttrycka sin koppling till naturen och det mystiska.",
       "image": "/src/assets/images/Pendants.png",
       "price": "149 kr",
-      "category": "smycken",
+      "category": "jewelry",
       "inStock": true,
       "features": [
         "Handgjorda av hållbart material",
@@ -55,7 +55,7 @@
       "longDescription": "En praktisk och stilren handväska som kombinerar funktionalitet med unik design. Perfekt storlek för att bära dina viktigaste saker, inklusive dina nya Fungi-smycken. Varje väska är handgjord med omsorg om detaljer och kvalitet.",
       "image": "/src/assets/images/Väska.png",
       "price": "500 kr",
-      "category": "smycken",
+      "category": "apparel",
       "inStock": true,
       "features": [
         "Handgjord av hållbart material",
