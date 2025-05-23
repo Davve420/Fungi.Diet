@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
 .product-detail {
   padding: 2rem;
   max-width: 1200px;
@@ -99,6 +101,9 @@
   cursor: pointer;
   width: 100%;
   transition: background-color 0.2s;
+  font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', cursive, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
 }
 
 .buy-button:hover {

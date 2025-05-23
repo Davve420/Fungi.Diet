@@ -45,7 +45,7 @@ const ProductDetail = () => {
             </ul>
           </div>
 
-          <button 
+          <button style={{fontFamily: 'Montserrat, Arial, sans-serif'}}
             className="buy-button"
             onClick={handleBuyClick}
             disabled={!product.inStock}
