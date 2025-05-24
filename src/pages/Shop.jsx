@@ -28,8 +28,16 @@ const Shop = () => {
   return (
     <div className="shop-page">
       <img src={logo} alt="Fungi Diet logga" className="shop-logo" />
+      
       <div className="shop-categories">
+      <button
+          className={`shop-category-btn font-header${!category ? ' active' : ''}`}
+          onClick={() => navigate('/shop')}
+        >
+          All
+        </button>
         {categories.map(cat => (
+          
           <button
             key={cat.value}
             className={`shop-category-btn font-header${category === cat.value ? ' active' : ''}`}
@@ -38,12 +46,7 @@ const Shop = () => {
             {cat.label}
           </button>
         ))}
-        <button
-          className={`shop-category-btn font-header${!category ? ' active' : ''}`}
-          onClick={() => navigate('/shop')}
-        >
-          Alla
-        </button>
+        
       </div>
       <div className="shop-list">
         {filteredProducts.map(product => (
