@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .shop-logo {
@@ -34,6 +36,14 @@
   gap: 1.1rem;
   margin-bottom: 2.2rem;
   justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.category-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .shop-category-btn {
@@ -47,6 +57,8 @@
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   outline: none;
+  position: relative;
+  z-index: 1;
 }
 
 .shop-category-btn.active,
@@ -56,9 +68,25 @@
 }
 
 .font-header {
-  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-family: 'UnifrakturCook', cursive;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.category-star {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.flying-rabbit {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  pointer-events: none;
+  top: 0;
+  right: 0;
 }
 
 .shop-list {

@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({ isRabbitAnimating }) => {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/shop" className="nav-link">Shop</Link>
-        <Link to="/about" className="nav-link">About</Link>
+        <div className="nav-links">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/shop" className="nav-link">Shop</Link>
+          <Link to="/about" className="nav-link">About</Link>
+        </div>
+        <img 
+          src="/src/assets/images/DemonRabbitPNG.png" 
+          alt="Fungi.Diet Rabbit" 
+          className={`rabbit-icon ${isRabbitAnimating ? 'hidden' : ''}`}
+        />
       </div>
     </nav>
   )

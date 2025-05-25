@@ -9,6 +9,12 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
   gap: 2rem;
 }
 
@@ -20,4 +26,29 @@
 
 .nav-link:hover {
   color: #666;
+}
+
+.rabbit-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  right: 0;
+}
+
+.rabbit-icon.hidden {
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .rabbit-icon {
+    width: 40px;
+    height: 40px;
+  }
 } 
