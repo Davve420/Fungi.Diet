@@ -1,10 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import * as images from '../../assets/images'
 import './ProductCard.css'
 
 const ProductCard = ({ product, index = 0, variant }) => {
   const navigate = useNavigate()
   const { title, image, price, id } = product
+  
+  // Get the actual image from our imports
+  const productImage = images[image] || image
 
   const handleClick = () => {
     if (variant === 'shop') {
@@ -18,8 +22,8 @@ const ProductCard = ({ product, index = 0, variant }) => {
     return (
       <div className="product-card shop-card" onClick={handleClick}>
         <div className="product-image">
-          {image ? (
-            <img src={image} alt={title} className="product-img" />
+          {productImage ? (
+            <img src={productImage} alt={title} className="product-img" />
           ) : (
             <div className="image-placeholder"></div>
           )}
@@ -41,8 +45,8 @@ const ProductCard = ({ product, index = 0, variant }) => {
       transition={{ duration: 0.7, delay: 0.5 + index * 0.18, ease: 'easeOut' }}
     >
       <div className="product-image">
-        {image ? (
-          <img src={image} alt={title} className="product-img" />
+        {productImage ? (
+          <img src={productImage} alt={title} className="product-img" />
         ) : (
           <div className="image-placeholder"></div>
         )}

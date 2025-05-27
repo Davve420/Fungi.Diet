@@ -70,29 +70,34 @@ body {
 }
 
 .shop-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(80, 60, 120, 0.06);
+  border: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(80, 60, 120, 0.08);
   min-height: 340px;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
   max-width: 420px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .shop-card:hover {
-  box-shadow: 0 8px 24px rgba(80, 60, 120, 0.13);
-  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(80, 60, 120, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .shop-card .product-image {
   height: 260px;
-  background: #f5f5f5;
-  border-radius: 10px 10px 0 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 
 .shop-info {

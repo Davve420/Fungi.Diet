@@ -3,12 +3,17 @@
 
 .navbar {
   padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  position: relative;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+  position: sticky;
+  top: 0;
   min-height: 60px;
   display: flex;
   align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .nav-content {
@@ -33,11 +38,19 @@
 .nav-link {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .nav-link:hover {
-  color: #666;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
 }
 
 .rabbit-container {
@@ -49,7 +62,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
-  z-index: 1000;
+  z-index: 101;
 }
 
 .rabbit-icon {
@@ -59,7 +72,7 @@
   transition: opacity 0.3s ease;
   position: relative;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 102;
 }
 
 .rabbit-icon.hidden {
@@ -76,7 +89,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .popup-content {

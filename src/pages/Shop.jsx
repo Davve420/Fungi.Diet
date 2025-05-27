@@ -1,9 +1,7 @@
 import './Shop.css'
 import productsData from '../data/products.json'
 import { useParams, useNavigate, useOutletContext } from 'react-router-dom'
-import logo from '../assets/images/FungiDiet-Logga.png'
-import star from '../assets/images/stjärna.PNG'
-import rabbit from '../assets/images/DemonRabbitPNG.png'
+import { logo, star, rabbit } from '../assets/images'
 import ProductCard from '../components/ui/ProductCard'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
@@ -23,9 +21,7 @@ const Shop = () => {
   const [activeButton, setActiveButton] = useState(null)
   const { setIsRabbitAnimating } = useOutletContext()
 
-  // Debug: logga normaliserade kategorier
-  // console.log('category param:', normalize(category))
-  // featuredProducts.forEach(p => console.log('product:', p.title, normalize(p.category)))
+
 
   const filteredProducts = category
     ? featuredProducts.filter(p => p.category === category)

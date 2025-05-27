@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { fungiFace } from '../assets/images'
 import './About.css'
 
 const About = () => {

@@ -16,12 +16,13 @@
 .shop-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem 4rem 1rem;
+  padding: 3rem 1rem 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .shop-logo {
@@ -47,24 +48,30 @@
 }
 
 .shop-category-btn {
-  background: #f5f5f5;
-  border: none;
-  border-radius: 20px;
-  padding: 0.7rem 2.2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 0.8rem 2.5rem;
   font-size: 1.1rem;
   color: #111;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   position: relative;
   z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .shop-category-btn.active,
 .shop-category-btn:hover {
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .font-header {

@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import useTypewriter from '../hooks/useTypewriter'
+import rabbit from '../assets/images/DemonRabbitPNG.png'
 import './NavBar.css'
 
 const NavBar = ({ isRabbitAnimating }) => {
@@ -107,56 +108,58 @@ const NavBar = ({ isRabbitAnimating }) => {
   }
 
   return (
-    <nav className="navbar">
-      <div className="nav-content">
-        <div className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/shop" className="nav-link">Shop</Link>
-          <Link to="/about" className="nav-link">About</Link>
+    <>
+      <nav className="navbar">
+        <div className="nav-content">
+          <div className="nav-links">
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/shop" className="nav-link">Shop</Link>
+            <Link to="/about" className="nav-link">About</Link>
+          </div>
+          <div className="rabbit-container" onClick={handleScreenClick}>
+            <AnimatePresence>
+              {showCornerRabbit && !isRabbitAnimating && (
+                <motion.img 
+                  src={rabbit} 
+                  alt="Fungi.Diet Rabbit" 
+                  className="rabbit-icon"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={handleRabbitClick}
+                  style={{ cursor: 'pointer' }}
+                  animate={isSpinning ? { rotate: 360, opacity: 0 } : { rotate: 0, opacity: 1 }}
+                  initial={{ rotate: -360, opacity: 0 }}
+                  exit={{ rotate: 360, opacity: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    ease: "easeInOut",
+                    rotate: { duration: 0.8 },
+                    scale: { duration: 0.2 }
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {showRabbitComment && (
+                <motion.div 
+                  className="rabbit-comment"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ 
+                    duration: 0.5,
+                    ease: "easeOut"
+                  }}
+                >
+                  <div className={`typewriter-text ${isCommentTyping ? 'typing' : ''}`}>
+                    {commentText}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-        <div className="rabbit-container" onClick={handleScreenClick}>
-          <AnimatePresence>
-            {showCornerRabbit && !isRabbitAnimating && (
-              <motion.img 
-                src="/src/assets/images/DemonRabbitPNG.png" 
-                alt="Fungi.Diet Rabbit" 
-                className="rabbit-icon"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handleRabbitClick}
-                style={{ cursor: 'pointer' }}
-                animate={isSpinning ? { rotate: 360, opacity: 0 } : { rotate: 0, opacity: 1 }}
-                initial={{ rotate: -360, opacity: 0 }}
-                exit={{ rotate: 360, opacity: 0 }}
-                transition={{ 
-                  duration: 0.5, 
-                  ease: "easeInOut",
-                  rotate: { duration: 0.8 },
-                  scale: { duration: 0.2 }
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <AnimatePresence>
-            {showRabbitComment && (
-              <motion.div 
-                className="rabbit-comment"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ 
-                  duration: 0.5,
-                  ease: "easeOut"
-                }}
-              >
-                <div className={`typewriter-text ${isCommentTyping ? 'typing' : ''}`}>
-                  {commentText}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
+      </nav>
 
       <AnimatePresence>
         {showPopup && (
@@ -173,7 +176,7 @@ const NavBar = ({ isRabbitAnimating }) => {
                 ×
               </button>
               <motion.img 
-                src="/src/assets/images/DemonRabbitPNG.png" 
+                src={rabbit} 
                 alt="Fungi.Diet Rabbit"
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
@@ -211,7 +214,7 @@ const NavBar = ({ isRabbitAnimating }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   )
 }
 

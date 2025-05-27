@@ -1,7 +1,7 @@
 import './Home.css'
 import ProductCard from '../components/ui/ProductCard'
 import productsData from '../data/products.json'
-import monsterPNG from '../assets/images/monsterPNG.png'
+import { monster } from '../assets/images'
 import { motion } from 'framer-motion'
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
     <div className="home">
       <section className="hero">
         <motion.img 
-          src={monsterPNG} 
+          src={monster} 
           alt="Fungi Diet monster" 
           className="main-logo"
           initial={{ opacity: 0, y: -60 }}
