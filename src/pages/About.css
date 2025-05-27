@@ -11,8 +11,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-              url('/src/assets/images/fungi-logo.png') center/cover;
+  /* Bakgrund sätts dynamiskt via inline styles */
   margin: -2rem -2rem 2rem -2rem;
   color: white;
 }

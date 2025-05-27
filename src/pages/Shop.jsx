@@ -4,7 +4,7 @@ import { useParams, useNavigate, useOutletContext } from 'react-router-dom'
 import { logo, star, rabbit } from '../assets/images'
 import ProductCard from '../components/ui/ProductCard'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 const categories = [
   { label: 'Jewelry', value: 'jewelry' },
@@ -20,8 +20,7 @@ const Shop = () => {
   const { featuredProducts } = productsData
   const [activeButton, setActiveButton] = useState(null)
   const { setIsRabbitAnimating } = useOutletContext()
-
-
+  const buttonRefs = useRef({})
 
   const filteredProducts = category
     ? featuredProducts.filter(p => p.category === category)
@@ -31,6 +30,26 @@ const Shop = () => {
     setActiveButton(catValue)
     setIsRabbitAnimating(true)
     navigate(catValue ? `/shop/${catValue}` : '/shop')
+  }
+
+  // Beräkna målposition för kaninen baserat på knappens position
+  const getTargetPosition = (catValue) => {
+    if (!catValue || !buttonRefs.current[catValue]) return { x: 0, y: 0 }
+    
+    const buttonRect = buttonRefs.current[catValue].getBoundingClientRect()
+    
+    return {
+      x: buttonRect.left + buttonRect.width / 2 - 25, // -25 för att centrera kaninen (50px bred / 2)
+      y: buttonRect.top - 50 // Justerat för att "landa" på knappens överkant
+    }
+  }
+
+  // Beräkna startposition från NavBar-kaninen (övre högra hörnet)
+  const getStartPosition = () => {
+    return {
+      x: window.innerWidth - 75, // Ungefär där NavBar-kaninen är
+      y: 10 // Ungefär NavBar-höjd
+    }
   }
 
   return (
@@ -48,6 +67,7 @@ const Shop = () => {
         {categories.map((cat, index) => (
           <div key={cat.value} className="category-container">
             <button
+              ref={el => buttonRefs.current[cat.value] = el}
               className={`shop-category-btn font-header${category === cat.value ? ' active' : ''}`}
               onClick={() => handleCategoryClick(cat.value)}
             >
@@ -63,14 +83,12 @@ const Shop = () => {
                   alt="Flying rabbit"
                   className="flying-rabbit"
                   initial={{ 
-                    x: 0,
-                    y: 0,
+                    ...getStartPosition(),
                     rotate: 0,
                     scaleX: 1
                   }}
                   animate={{ 
-                    x: `calc(-100vw + ${index * 200 + 480}px)`,
-                    y: 150,
+                    ...getTargetPosition(cat.value),
                     rotate: -15,
                     scaleX: -1
                   }}

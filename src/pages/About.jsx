@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion'
-import { fungiFace } from '../assets/images'
+import { fungiFace, pendants } from '../assets/images'
 import './About.css'
 
 const About = () => {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section className="about-hero">
+      <section 
+        className="about-hero"
+        style={{
+          background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${pendants}) center/cover`
+        }}
+      >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +52,7 @@ const About = () => {
           className="creator-content"
         >
           <div className="creator-image">
-            <img src="/src/assets/images/FungiFace.png" alt="Moa - Skaparen av Fungi.Diet" />
+            <img src={fungiFace} alt="Moa - Skaparen av Fungi.Diet" />
           </div>
           <div className="creator-info">
             <h2>Moa</h2>

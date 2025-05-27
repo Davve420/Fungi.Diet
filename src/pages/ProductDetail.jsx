@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import productsData from '../data/products.json'
+import * as images from '../assets/images'
 import './ProductDetail.css'
 
 const ProductDetail = () => {
@@ -10,6 +11,9 @@ const ProductDetail = () => {
   if (!product) {
     return <div>Produkten hittades inte</div>
   }
+
+  // Get the actual image from our imports
+  const productImage = images[product.image] || product.image
 
   const handleBuyClick = () => {
     // Här kan vi lägga till köp-logik senare
@@ -24,8 +28,8 @@ const ProductDetail = () => {
       
       <div className="product-detail-content">
         <div className="product-image-large">
-          {product.image ? (
-            <img src={product.image} alt={product.title} />
+          {productImage ? (
+            <img src={productImage} alt={product.title} />
           ) : (
             <div className="image-placeholder"></div>
           )}

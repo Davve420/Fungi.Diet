@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import useTypewriter from '../hooks/useTypewriter'
-import rabbit from '../assets/images/DemonRabbitPNG.png'
+import { rabbit, logo } from '../assets/images'
 import './NavBar.css'
 
 const NavBar = ({ isRabbitAnimating }) => {
@@ -16,6 +16,7 @@ const NavBar = ({ isRabbitAnimating }) => {
   const [key, setKey] = useState(0)
   const [showRabbitComment, setShowRabbitComment] = useState(false)
   const [shouldFadeOut, setShouldFadeOut] = useState(false)
+  const [showWelcomeMessage, setShowWelcomeMessage] = useState(false)
   
   const messages = [
     "Hej! Mitt namn är Fungi Rabbit, jag är här för att hjälpa dig!",
@@ -24,6 +25,7 @@ const NavBar = ({ isRabbitAnimating }) => {
 
   const { displayText, isTyping, completeTyping } = useTypewriter(shouldType ? messages[currentMessageIndex] : '', 100, key)
   const { displayText: commentText, isTyping: isCommentTyping, completeTyping: completeCommentTyping } = useTypewriter(showRabbitComment ? "Detta är min personliga favorit. Vad tycker du?" : '', 100)
+  const { displayText: welcomeText, isTyping: isWelcomeTyping } = useTypewriter(showWelcomeMessage ? "Välkommen till Fungi Diet! Klicka på mig om du behöver hjälp." : '', 80)
 
   useEffect(() => {
     if (!isTyping && shouldType) {
@@ -48,6 +50,23 @@ const NavBar = ({ isRabbitAnimating }) => {
     }
   }, [isCommentTyping, showRabbitComment])
 
+  useEffect(() => {
+    const welcomeTimer = setTimeout(() => {
+      setShowWelcomeMessage(true)
+    }, 1500)
+
+    return () => clearTimeout(welcomeTimer)
+  }, [])
+
+  useEffect(() => {
+    if (!isWelcomeTyping && showWelcomeMessage) {
+      const hideTimer = setTimeout(() => {
+        setShowWelcomeMessage(false)
+      }, 4000)
+      return () => clearTimeout(hideTimer)
+    }
+  }, [isWelcomeTyping, showWelcomeMessage])
+
   const resetPopup = () => {
     setShowPopup(false)
     setShowCornerRabbit(true)
@@ -61,6 +80,7 @@ const NavBar = ({ isRabbitAnimating }) => {
     setIsSpinning(true)
     resetPopup()
     setShowRabbitComment(false)
+    setShowWelcomeMessage(false) // Dölj välkomstmeddelandet
     const popupTimer = setTimeout(() => {
       setShowPopup(true)
       setIsSpinning(false)
@@ -93,6 +113,9 @@ const NavBar = ({ isRabbitAnimating }) => {
     if (showRabbitComment && !isCommentTyping) {
       setShowRabbitComment(false)
     }
+    if (showWelcomeMessage && !isWelcomeTyping) {
+      setShowWelcomeMessage(false)
+    }
   }
 
   const handleOptionClick = (option) => {
@@ -111,6 +134,11 @@ const NavBar = ({ isRabbitAnimating }) => {
     <>
       <nav className="navbar">
         <div className="nav-content">
+          <div className="logo-container">
+            <Link to="/">
+              <img src={logo} alt="Fungi.Diet Logo" className="nav-logo" />
+            </Link>
+          </div>
           <div className="nav-links">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/shop" className="nav-link">Shop</Link>
@@ -137,6 +165,24 @@ const NavBar = ({ isRabbitAnimating }) => {
                     scale: { duration: 0.2 }
                   }}
                 />
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {showWelcomeMessage && (
+                <motion.div 
+                  className="rabbit-comment welcome-comment"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ 
+                    duration: 0.5,
+                    ease: "easeOut"
+                  }}
+                >
+                  <div className={`typewriter-text ${isWelcomeTyping ? 'typing' : ''}`}>
+                    {welcomeText}
+                  </div>
+                </motion.div>
               )}
             </AnimatePresence>
             <AnimatePresence>
