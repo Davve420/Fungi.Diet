@@ -1,6 +1,5 @@
 [build]
-  base = "Fungi.Diet"
-  publish = "Fungi.Diet/dist"
+  publish = "dist"
   command = "npm run build"
 
 [[forms]]
