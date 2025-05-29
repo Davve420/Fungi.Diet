@@ -17,6 +17,7 @@ const NavBar = ({ isRabbitAnimating }) => {
   const [showRabbitComment, setShowRabbitComment] = useState(false)
   const [shouldFadeOut, setShouldFadeOut] = useState(false)
   const [showWelcomeMessage, setShowWelcomeMessage] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   const messages = [
     "Hej! Mitt namn är Fungi Rabbit, jag är här för att hjälpa dig!",
@@ -130,12 +131,20 @@ const NavBar = ({ isRabbitAnimating }) => {
     resetPopup()
   }
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <>
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo-container">
-            <Link to="/">
+            <Link to="/" onClick={closeMobileMenu}>
               <img src={logo} alt="Fungi.Diet Logo" className="nav-logo" />
             </Link>
           </div>
@@ -145,6 +154,18 @@ const NavBar = ({ isRabbitAnimating }) => {
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/commission" className="nav-link">Commission</Link>
           </div>
+
+          {/* Mobile Hamburger Button - only visible on mobile */}
+          <button 
+            className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <div className="rabbit-container" onClick={handleScreenClick}>
             <AnimatePresence>
               {showCornerRabbit && !isRabbitAnimating && (
@@ -206,6 +227,26 @@ const NavBar = ({ isRabbitAnimating }) => {
             </AnimatePresence>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu - only visible on mobile */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              className="mobile-nav-menu"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <div className="mobile-nav-links">
+                <Link to="/" className="mobile-nav-link" onClick={closeMobileMenu}>Home</Link>
+                <Link to="/shop" className="mobile-nav-link" onClick={closeMobileMenu}>Shop</Link>
+                <Link to="/about" className="mobile-nav-link" onClick={closeMobileMenu}>About</Link>
+                <Link to="/commission" className="mobile-nav-link" onClick={closeMobileMenu}>Commission</Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       <AnimatePresence>

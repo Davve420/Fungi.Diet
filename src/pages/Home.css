@@ -99,4 +99,109 @@
 
 body {
   border: 10px solid red !important;
+}
+
+/* Mobile Responsive Design - Only for mobile, desktop unchanged */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem 2.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .featured {
+    padding: 0 1rem 2.5rem 1rem;
+  }
+  
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .main-logo {
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+  
+  .item-info {
+    padding: 1.2rem;
+  }
+  
+  .item-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .item-info p {
+    font-size: 0.9rem;
+  }
+  
+  .price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0.8rem 2rem 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .featured {
+    padding: 0 0.8rem 2rem 0.8rem;
+  }
+  
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .main-logo {
+    max-width: 300px;
+  }
+  
+  .item-image {
+    height: 180px;
+  }
+  
+  .item-info {
+    padding: 1.2rem;
+  }
+  
+  .item-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .item-info p {
+    font-size: 0.95rem;
+  }
 } 

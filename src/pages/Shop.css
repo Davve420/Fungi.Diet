@@ -107,4 +107,74 @@
 
 .shop-info .price {
   color: #111;
+}
+
+/* Mobile Responsive Design - Only for mobile, desktop unchanged */
+@media (max-width: 768px) {
+  .shop-page {
+    padding: 2rem 1rem 3rem 1rem;
+  }
+  
+  .shop-logo {
+    max-width: 160px;
+    margin-bottom: 2rem;
+  }
+  
+  .shop-categories {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .shop-category-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+  
+  .shop-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .flying-rabbit {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-page {
+    padding: 1.5rem 0.8rem 2rem 0.8rem;
+  }
+  
+  .shop-logo {
+    max-width: 140px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .shop-categories {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+  
+  .shop-category-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .shop-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 350px;
+  }
+  
+  /* Disable complex animations on very small screens */
+  .flying-rabbit {
+    display: none;
+  }
 } 
