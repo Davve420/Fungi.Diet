@@ -1,0 +1,62 @@
+
+1. Gå till [netlify.com](https://netlify.com)
+2. Registrera med GitHub-kontot
+3. Klicka "New site from Git"
+4. Välj ditt fungi.diet repo
+5. **Build settings:**
+   - **Branch:** `demo-1`
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+6. Klicka "Deploy site"
+
+#### **Steg 3: Konfigurera formulär**
+1. I Netlify dashboard → Site settings → Forms
+2. Aktivera "Form detection"
+3. Lägg till din email för notifikationer
+
+#### **Steg 4: Få temporär URL**
+- Netlify ger dig en URL typ: `https://amazing-fungi-123456.netlify.app`
+- Skicka denna till Moa så hon kan följa utvecklingen!
+
+### **🎨 För Moa - Domän setup (när sidan är klar):**
+
+#### **Steg 1: Domäninställningar**
+1. Logga in på hennes domänleverantör (Loopia/Binero/etc)
+2. Gå till DNS-inställningar
+3. Ändra A-record eller CNAME till Netlify
+
+#### **Steg 2: Netlify domänkonfiguration**
+1. I Netlify → Domain settings
+2. "Add custom domain"
+3. Ange hennes domän
+4. Netlify ger instruktioner för DNS
+
+#### **Steg 3: SSL-certifikat**
+- Netlify ordnar automatiskt gratis SSL (https://)
+
+## 🔄 **Automatisk workflow efter setup:**
+
+```
+Du kodar → git push → Netlify bygger → Sidan uppdateras → Moa ser ändringarna!
+```
+
+## 📧 **Email-konfiguration:**
+
+När formuläret är live:
+1. **Testa** med din email först
+2. **Byt** till Moas email i Netlify-inställningarna
+3. **Konfigurera** email-templates om ni vill
+
+## 🎯 **Fördelar för er:**
+
+- ✅ **Moa kan följa utvecklingen** live
+- ✅ **Automatiska uppdateringar** vid varje push
+- ✅ **Gratis staging-miljö** för testning
+- ✅ **Professionell URL** hon kan dela
+- ✅ **Backup** av alla versioner
+
+## 🚀 **Nästa steg:**
+
+Vill du att jag hjälper dig att sätta upp GitHub-repot och pusha koden? Då kan vi få igång den automatiska deployment-processen direkt! 
+
+Moa kommer att älska att kunna följa utvecklingen live! 🎨✨
