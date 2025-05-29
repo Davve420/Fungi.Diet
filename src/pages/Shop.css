@@ -109,15 +109,6 @@
   color: #111;
 }
 
-/* Mobile category separator star */
-.mobile-category-star {
-  display: none;
-  width: 16px;
-  height: 16px;
-  opacity: 0.6;
-  margin: 0.5rem auto;
-}
-
 /* Mobile Responsive Design - Only for mobile, desktop unchanged */
 @media (max-width: 768px) {
   .shop-page {
@@ -135,10 +126,6 @@
     margin-bottom: 2.5rem;
     padding: 0 1rem;
     align-items: stretch;
-  }
-  
-  .mobile-category-star {
-    display: block;
   }
   
   .shop-category-btn {

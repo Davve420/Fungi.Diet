@@ -64,7 +64,6 @@ const Shop = () => {
           All
         </button>
         <img src={star} alt="star" className="category-star" />
-        <img src={star} alt="star" className="mobile-category-star" />
         
         {categories.map((cat, index) => (
           <div key={cat.value} className="category-container">
@@ -76,10 +75,7 @@ const Shop = () => {
               {cat.label}
             </button>
             {index < categories.length - 1 && (
-              <>
-                <img src={star} alt="star" className="category-star" />
-                <img src={star} alt="star" className="mobile-category-star" />
-              </>
+              <img src={star} alt="star" className="category-star" />
             )}
             <AnimatePresence>
               {activeButton === cat.value && (
