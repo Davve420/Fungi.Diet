@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Shop from './pages/Shop'
 import ProductDetail from './pages/ProductDetail'
+import Commission from './pages/Commission'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:category" element={<Shop />} />
           <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="commission" element={<Commission />} />
         </Route>
       </Routes>
     </BrowserRouter>

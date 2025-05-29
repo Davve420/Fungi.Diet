@@ -143,6 +143,7 @@ const NavBar = ({ isRabbitAnimating }) => {
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/shop" className="nav-link">Shop</Link>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/commission" className="nav-link">Commission</Link>
           </div>
           <div className="rabbit-container" onClick={handleScreenClick}>
             <AnimatePresence>
