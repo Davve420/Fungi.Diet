@@ -357,17 +357,25 @@
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border: none;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(80, 60, 120, 0.2);
+  border-radius: 8px;
   cursor: pointer;
-  padding: 0;
+  padding: 6px;
   z-index: 102;
   position: absolute;
   right: 70px;
   top: 50%;
   transform: translateY(-50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 15px rgba(80, 60, 120, 0.2);
 }
 
 .mobile-menu-toggle span {
@@ -377,6 +385,10 @@
   border-radius: 2px;
   transition: all 0.3s ease;
   transform-origin: center;
+}
+
+.mobile-menu-toggle.open {
+  background: rgba(80, 60, 120, 0.1);
 }
 
 .mobile-menu-toggle.open span:nth-child(1) {
@@ -392,33 +404,40 @@
 }
 
 .mobile-nav-menu {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-top: 1px solid rgba(224, 224, 224, 0.6);
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
 .mobile-nav-link {
   text-decoration: none;
   color: #333;
   font-weight: 600;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  padding: 1.2rem 2rem;
   transition: all 0.3s ease;
   border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-nav-link:hover,
 .mobile-nav-link:active {
-  background-color: rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, rgba(80, 60, 120, 0.05) 0%, rgba(80, 60, 120, 0.1) 100%);
   color: #000;
+  transform: translateX(5px);
 }
 
 .mobile-nav-link:last-child {
@@ -437,8 +456,15 @@
 }
 
 @media (max-width: 480px) {
+  .mobile-menu-toggle {
+    width: 32px;
+    height: 32px;
+    right: 65px;
+  }
+  
   .mobile-nav-link {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    min-height: 48px;
   }
 } 

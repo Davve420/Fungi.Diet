@@ -118,4 +118,89 @@ body {
   color: #111;
   font-size: 1.2rem;
   margin-top: 0.2rem;
+}
+
+/* Mobile Responsive Design - Only for mobile, desktop unchanged */
+@media (max-width: 768px) {
+  .shop-card {
+    max-width: 100%;
+    min-height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(80, 60, 120, 0.12);
+    margin: 0;
+  }
+  
+  .shop-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 35px rgba(80, 60, 120, 0.18);
+  }
+  
+  .shop-card .product-image {
+    height: 220px;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .shop-info {
+    padding: 1.2rem 1rem 1.3rem 1rem;
+  }
+  
+  .shop-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .shop-info .price {
+    font-size: 1.1rem;
+  }
+  
+  .product-img {
+    object-fit: cover;
+  }
+  
+  /* Reduce hover effects on mobile */
+  .product-card:hover .product-img {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-card {
+    min-height: 280px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(80, 60, 120, 0.1);
+  }
+  
+  .shop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(80, 60, 120, 0.15);
+  }
+  
+  .shop-card .product-image {
+    height: 200px;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .shop-info {
+    padding: 1rem 0.8rem 1.2rem 0.8rem;
+  }
+  
+  .shop-info h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  
+  .shop-info .price {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+  
+  /* Disable complex hover effects on small screens */
+  .product-card:hover {
+    transform: none;
+    box-shadow: 0 8px 32px rgba(80, 60, 120, 0.10);
+  }
+  
+  .product-card:hover .product-img {
+    transform: none;
+  }
 } 
